@@ -1,0 +1,252 @@
+/* إعدادات الخطوط والألوان العامة */
+@import url('https://googleapis.com');
+
+:root {
+    --bg-color: #f0f4f8;
+    --primary-color: #2c3e50;
+    --accent-color: #16a085;
+    --success-color: #27ae60;
+    --error-color: #c0392b;
+    --text-color: #34495e;
+    --card-bg: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Cairo', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* الهيدر */
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    padding: 25px 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+header h1 { font-size: 1.8rem; font-weight: 700; }
+header p { font-size: 1rem; opacity: 0.9; margin-top: 5px; }
+
+/* الحاوية الرئيسية للموقع */
+.main-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 30px auto;
+    gap: 20px;
+    padding: 0 15px;
+}
+
+/* القائمة الجانبية للفهرس */
+.sidebar {
+    flex: 1;
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    height: fit-content;
+}
+
+.sidebar h3 {
+    margin-bottom: 15px;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--bg-color);
+    padding-bottom: 10px;
+}
+
+.sidebar ul { list-style: none; }
+
+.sidebar li {
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.sidebar li.active {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.sidebar li.locked {
+    background-color: #e9ecef;
+    color: #95a5a6;
+    cursor: not-allowed;
+    position: relative;
+}
+
+.sidebar li.locked::after {
+    content: "🔒";
+    float: left;
+    font-size: 0.9rem;
+}
+
+/* قسم الاختبار */
+.quiz-section {
+    flex: 3;
+}
+
+.quiz-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+/* شريط التقدم */
+.quiz-header {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.badge {
+    background-color: #e8f8f5;
+    color: var(--accent-color);
+    padding: 5px 15px;
+    border-radius: 20px;
+    width: fit-content;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.progress-container {
+    background-color: #e9ecef;
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background-color: var(--accent-color);
+    width: 0%;
+    height: 100%;
+    transition: width 0.4s ease;
+}
+
+/* محتوى السؤال */
+.question-text {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+/* خيارات الإجابة */
+.options-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.option-item {
+    background-color: #f8f9fa;
+    border: 2px solid #e9ecef;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.option-item:hover {
+    border-color: var(--accent-color);
+    background-color: #f4fbf9;
+}
+
+.option-item.selected {
+    border-color: var(--accent-color);
+    background-color: #e8f8f5;
+}
+
+.option-item.correct {
+    border-color: var(--success-color);
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.option-item.wrong {
+    border-color: var(--error-color);
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* صندوق خطوات الحل الشارحة */
+.steps-box {
+    background-color: #fff9e6;
+    border-right: 4px solid #f1c40f;
+    padding: 15px;
+    border-radius: 4px 10px 10px 4px;
+    margin-top: 20px;
+    font-size: 0.95rem;
+    animation: fadeIn 0.5s ease;
+}
+
+.steps-box h4 { color: #b7950b; margin-bottom: 5px; }
+
+/* أزرار التحكم */
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+    width: 100%;
+}
+
+button:hover { background-color: #1a252f; }
+
+/* لوحة النتيجة */
+.result-card {
+    text-align: center;
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.score-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #e8f8f5;
+    border: 5px solid var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+.hidden { display: none; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* شاشات الموبايل */
+@media (max-width: 768px) {
+    .main-container { flex-direction: column; }
+    .sidebar { order: 2; }
+    .quiz-section { order: 1; }
+}

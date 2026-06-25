@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة اختبارات الرياضيات الرقمية - الثالث المتوسط</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- الهيدر العلوي -->
+    <header>
+        <div class="header-container">
+            <h1>منصة الرياضيات الرقمية</h1>
+            <p>الصف الثالث المتوسط - المنهج القومي بخت الرضا</p>
+        </div>
+    </header>
+
+    <!-- الحاوية الرئيسية -->
+    <main class="main-container">
+        
+        <!-- القائمة الجانبية للوحدات والمنهج -->
+        <aside class="sidebar">
+            <h3>فهرس الكتاب المرفق</h3>
+            <ul id="units-list">
+                <li class="active" onclick="loadUnit(1)">الوحدة 1: الدالة (التطبيق)</li>
+                <li class="locked">الوحدة 2: الأسس واللوغاريثمات</li>
+                <li class="locked">الوحدة 3: المستوى الديكارتي والمعادلات الآسية</li>
+                <li class="locked">الوحدة 4: الدائرة</li>
+                <li class="locked">الوحدة 5: ضرب وتحليل المقادير الجبرية</li>
+                <li class="locked">الوحدة 6: معادلات الدرجة الثانية</li>
+                <li class="locked">الوحدة 7: الإحصاء</li>
+                <li class="locked">الوحدة 8: الحجوم</li>
+            </ul>
+        </aside>
+
+        <!-- منطقة الاختبار التفاعلية -->
+        <section class="quiz-section">
+            <!-- الحاوية الرئيسية لبطاقة الاختبار -->
+            <div id="quiz-card" class="quiz-card">
+                <div class="quiz-header">
+                    <span class="badge" id="current-unit-title">الوحدة الأولى: الدالة</span>
+                    <div class="progress-container">
+                        <div class="progress-bar" id="progress-bar"></div>
+                    </div>
+                </div>
+
+                <!-- مكان ظهور السؤال التفاعلي -->
+                <div id="question-container">
+                    <!-- سيتم توليد الأسئلة هنا برمجياً بواسطة JS -->
+                </div>
+
+                <!-- زر التحقق والانتقال -->
+                <div class="quiz-footer">
+                    <button id="action-btn" onclick="checkOrNext()">تحقق من الإجابة</button>
+                </div>
+            </div>
+
+            <!-- لوحة النتيجة النهائية (تكون مخفية وتظهر عند النهاية) -->
+            <div id="result-card" class="result-card hidden">
+                <h2>🎉 اكتمل الاختبار بنجاح!</h2>
+                <div class="score-circle">
+                    <span id="final-score">0/0</span>
+                </div>
+                <p id="result-message"></p>
+                <button onclick="restartQuiz()">إعادة المحاولة</button>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
